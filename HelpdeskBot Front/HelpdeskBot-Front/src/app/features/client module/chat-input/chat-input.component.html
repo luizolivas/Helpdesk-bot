@@ -1,0 +1,7 @@
+<mat-form-field class="chat-input" appearance="fill">
+    <mat-label>Digite...</mat-label>
+    <input matInput [(ngModel)]="inputText" (keyup.enter)="send()">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="send()">Enviar</button>
+  
+  

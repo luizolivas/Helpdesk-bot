@@ -1,0 +1,57 @@
+<mat-card class="report-container">
+  <mat-card-header>
+    <mat-card-title>Relatar um Problema</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #reportForm="ngForm" class="report-form">
+      <mat-form-field appearance="outline" class="full-width large-textarea">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput placeholder="Descreva o problema" [(ngModel)]="chamado.description" name="description" required></textarea>
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td> <label>Usuario conectado no momento do erro:</label>
+          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="chamado.user" name="user">
+        </mat-form-field>     
+      </td></tr>
+      <tr>
+        <td> <label>Algum código para informar? (pedido, OC, etc..): </label>
+          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Código</mat-label>
+          <input matInput [(ngModel)]="chamado.codes" name="codes" >
+        </mat-form-field></td>
+      </tr>
+      </table>   
+      
+      <label>Se possível, sempre insira um print ou uma foto do erro:</label>
+      <div class="upload-container">
+        <!-- Cartão para upload de imagem com área de colagem -->
+        <mat-card class="dropzone-card">
+          <div class="dropzone" (paste)="onPaste($event)">
+            <mat-icon>cloud_upload</mat-icon>
+            <p>Clique, cole ou arraste sua imagem aqui</p>            
+            <input type="file" multiple (change)="onFileSelected($event)" accept="image/*">
+          </div>
+        </mat-card>
+      
+        <!-- Pré-visualização das imagens -->
+        <mat-card class="image-preview-card">
+          <div class="image-preview" *ngIf="imagePreviews.length > 0">
+            <div *ngFor="let image of imagePreviews" class="image-preview-item">
+              <img [src]="image" alt="Image preview">
+            </div>
+          </div>
+          <p *ngIf="imagePreviews.length === 0">Nenhuma imagem selecionada ou colada ainda.</p>
+        </mat-card>
+      </div>
+      
+
+      <div class="button-group">
+        <button color="primary" type="submit" [disabled]="reportForm.invalid">Enviar</button>
+        <button color="warn" type="reset" (click)="onReset()">Limpar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

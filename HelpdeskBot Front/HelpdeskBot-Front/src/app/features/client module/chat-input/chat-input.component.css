@@ -1,0 +1,17 @@
+mat-form-field {
+  width: calc(100% - 20px); /* Aumenta a largura da caixa de texto e remove margem */
+  margin: 0 10px; /* Adiciona margens laterais para centralizar */
+}
+
+button {
+  margin-top: 1em;
+  width: calc(100% - 20px); /* Aumenta a largura do botão e remove margem */
+  background-color: #00acc1; /* Azul médio */
+  color: white;
+  font-size: 1.2em; /* Aumentar tamanho da fonte */
+  padding: 10px; /* Aumenta o espaçamento interno */
+}
+
+button:hover {
+  background-color: #00838f; /* Azul escuro */
+}

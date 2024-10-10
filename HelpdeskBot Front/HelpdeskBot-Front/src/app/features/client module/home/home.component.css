@@ -1,0 +1,52 @@
+/* Estilização geral do corpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Fundo azul claro */
+    color: #004d40; /* Texto verde escuro */
+    height: 100vh;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header {
+    background-color: #00acc1; /* Azul médio */
+    padding: 1em;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 1em;
+    font-size: 1.2em;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  section.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 20px; /* Espaço entre os botões */
+    width: 60%; /* Ajuste de largura para centralizar melhor */
+  }
+  
+  .big-button {
+    width: 100%; /* Ocupa o espaço da coluna */
+    height: 150px; /* Aumenta a altura do botão */
+    font-size: 1.8em; /* Texto maior */
+  }
+  

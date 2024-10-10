@@ -1,0 +1,11 @@
+<div *ngFor="let item of dataSource">
+  <mat-card [ngClass]="getStatusClass(item.status)" appearance="outlined" class="status-card">
+    <mat-card-header>
+      <mat-card-title>Chamado N° {{item.id}} || Situação: {{ getStatusText(item.status) }}</mat-card-title>
+      <mat-card-subtitle>Seu relato de erro foi registrado com sucesso, aguarde para novas atualizações.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button (click)="redirectToStatusDetail(item.id)">Detalhes</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,39 @@
+/* Estilização geral para a aplicação */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Fundo azul claro */
+    color: #004d40; /* Texto verde escuro */
+    height: 100vh; /* Altura total da tela */
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Altura total da tela */
+  }
+  
+  header {
+    background-color: #00acc1; /* Azul médio */
+    padding: 1em;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 1em;
+    font-size: 1.2em;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  section.content {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  

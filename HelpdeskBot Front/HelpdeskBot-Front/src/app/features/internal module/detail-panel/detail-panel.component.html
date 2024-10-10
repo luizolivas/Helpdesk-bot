@@ -1,0 +1,56 @@
+<mat-card class="detail-container">
+    <mat-card-header>
+      <mat-card-title>Detalhes do chamado</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="detail-item">
+        <label><strong>Descrição:</strong></label>
+        <p>{{chamado.description}}</p>
+      </div>
+  
+      <div class="detail-item">
+        <label><strong>Usuário:</strong></label>
+        <p>{{chamado.user}}</p>
+      </div>
+  
+      <div class="detail-item">
+        <label><strong>Código Informado:</strong></label>
+        <p>{{chamado.id}}</p>
+      </div>
+  
+      <label><strong>Imagens enviadas:</strong></label>
+      <div class="image-preview" *ngIf="imagePreviews.length > 0">
+        
+        <div *ngFor="let image of imagePreviews" class="image-preview-item" (click)="openImageDialog(image.caminho)">
+          <img [src]="image.caminho" alt="Image preview">
+        </div>
+      </div>
+  
+      <div class="detail-item">
+        <label><strong>Situação:</strong></label>
+        <mat-form-field appearance="fill" class="status-dropdown">
+          <mat-label>Situação</mat-label>
+          <mat-select [(value)]="chamado.status">
+            <mat-option *ngFor="let status of statusOptions" [value]="status.value">
+              {{status.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+
+      <div>
+        <label><strong>Observações suporte (apenas interno):</strong></label>
+        <mat-form-field appearance="outline" class="full-width large-textarea">
+          <mat-label>Observações</mat-label>
+          <textarea matInput placeholder="Descreva" [(ngModel)]="chamado.internalDescription" name="internalDescription">Texto Teste</textarea>
+        </mat-form-field>
+      </div>
+  
+      <div class="button-group">
+        <button color="warn" (click)="onSubmit()">Atualizar</button>
+        <button color="warn" (click)="backToList()">Voltar à Lista</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

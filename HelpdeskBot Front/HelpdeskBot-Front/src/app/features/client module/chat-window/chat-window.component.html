@@ -1,0 +1,11 @@
+<mat-card class="chat-window">
+  <mat-card-content class="chat-messages">
+    <div *ngFor="let message of messages" class="message">
+      <strong>{{message.user}}:</strong>
+      <span [innerHTML]="message.text"></span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <app-chat-input (sendMessage)="onSendMessage($event)"></app-chat-input>
+  </mat-card-actions>
+</mat-card>
